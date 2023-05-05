@@ -25,7 +25,7 @@ const Hero = () => {
             Get Quote
           </Button>
         </a>
-        <a href="/contact">
+        <a href="/about">
           <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-3 px-6 md:py-4 md:px-9 rounded-md">
             Learn More
           </Button>

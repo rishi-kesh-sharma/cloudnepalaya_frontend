@@ -49,7 +49,38 @@ const Blog = ({ blog }) => {
                 {title}
               </h1>
             </header>
-            <p className="lead text-sm text-gray-500">{text}</p>
+            <div className="flex flex-col gap-[1rem]">
+              <p className="lead text-sm text-gray-500">
+                {text
+                  .match(/.*?[\.!\?]+(?:\s|$)/g)
+                  .slice(0, text.match(/.*?[\.!\?]+(?:\s|$)/g).length / 3)}
+              </p>
+              <img src={mainImage2.src} alt="" />
+              <p className="lead text-sm text-gray-500">
+                {text
+                  .match(/.*?[\.!\?]+(?:\s|$)/g)
+                  .slice(
+                    text.match(/.*?[\.!\?]+(?:\s|$)/g).length / 3,
+                    2 * (text.match(/.*?[\.!\?]+(?:\s|$)/g).length / 3)
+                  )}
+              </p>
+              <img src={mainImage3.src} alt="" />
+
+              <p className="lead text-sm text-gray-500">
+                {text
+                  .match(/.*?[\.!\?]+(?:\s|$)/g)
+                  .slice(
+                    text.match(/.*?[\.!\?]+(?:\s|$)/g).length / 3,
+                    2 * (text.match(/.*?[\.!\?]+(?:\s|$)/g).length / 3)
+                  ) &&
+                  text
+                    .match(/.*?[\.!\?]+(?:\s|$)/g)
+                    .slice(
+                      (2 * text.match(/.*?[\.!\?]+(?:\s|$)/g).length) / 3,
+                      3 * (text.match(/.*?[\.!\?]+(?:\s|$)/g).length / 3)
+                    )}
+              </p>
+            </div>
 
             <figure>
               <img
@@ -315,13 +346,13 @@ const Blog = ({ blog }) => {
                   <textarea
                     id="comment"
                     rows="6"
-                    className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                    className="p-4 w-full focus:outline-none   text-gray-700 border-0  dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                     placeholder="Write a comment..."
                     required></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                  className=" bg-sky-700 inline-flex items-center py-3.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
                   Post comment
                 </button>
               </form>
