@@ -49,7 +49,7 @@ const Blog = ({ blog }) => {
                 {title}
               </h1>
             </header>
-            <p className="lead">{text}</p>
+            <p className="lead text-sm text-gray-500">{text}</p>
 
             <figure>
               <img
