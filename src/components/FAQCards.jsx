@@ -1,4 +1,7 @@
-import { faqData } from "@/data";
+"use client";
+import { getDocuments } from "@/apiCalls/general";
+// import { faqData } from "@/data";
+import { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionBody,
@@ -6,7 +9,17 @@ import {
   AccordionItem,
 } from "react-headless-accordion";
 
-const App = () => {
+const FAQCards = () => {
+  const [documents, setDocuments] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getDocuments("faq");
+      console.log(response?.data?.documents);
+      setDocuments(response?.data?.documents);
+      return response;
+    };
+    getData();
+  }, []);
   return (
     <Accordion
       className="py-[1rem] border border-gray-400 rounded-lg"
@@ -14,13 +27,13 @@ const App = () => {
         duration: "300ms",
         timingFunction: "cubic-bezier(0, 0, 0.2, 1)",
       }}>
-      {faqData.map((item) => (
+      {documents.map((item) => (
         <AccordionItem>
           {({ open }) => (
             <>
-              <AccordionHeader className="w-full flex justify-between items-start text-gray-600 border-b px-2 py-1 md:p-4 text-start ">
-                <span className="text-gray-900 font-[400] md:text-[1.1rem] text-sm">
-                  {item.question}
+              <AccordionHeader className="w-full flex justify-between items-start text-gray-600 border-b px-2 py-3  text-start ">
+                <span className="text-gray-900 font-[400]  text-sm">
+                  {item?.question}
                 </span>
                 <svg
                   class={`w-6 h-6 ${!open ? "" : "rotate-90"}`}
@@ -37,7 +50,7 @@ const App = () => {
 
               <AccordionBody>
                 <div className="py-3 md:py-5 px-2  text-gray-500  text-sm">
-                  {item.answer}
+                  {item?.answer}
                 </div>
               </AccordionBody>
             </>
@@ -48,4 +61,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default FAQCards;

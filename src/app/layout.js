@@ -16,7 +16,6 @@ export const metadata = {
 
 import { Poppins } from "next/font/google";
 import { createContext, useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import MountedContainer from "@/components/commons/MountedContainer";
 import Button from "@/components/commons/Button";
 import SecondaryHeader from "@/components/sections/SecondaryHeader";

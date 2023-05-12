@@ -57,7 +57,7 @@ const PricingCards = () => {
                 </p>
               ))}
             </ul>
-            <a href="/contact">
+            <a href="/quote">
               <Button
                 className={`uppercase font-semibold text-sm  py-3 px-5  md:py-4 md:px-9 rounded-md ${
                   alter

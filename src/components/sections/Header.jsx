@@ -9,7 +9,7 @@ import logoImage from "../../assets/images/logo.png";
 import Image from "next/image";
 import Section from "../commons/Section";
 import { NavCtx } from "@/app/layout";
-import { DASHBOARD_URL } from "../../../constants";
+import { DASHBOARD_URL } from "../../constants/general";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

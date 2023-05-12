@@ -29,12 +29,9 @@ export const servicesData = [
     ],
 
     title: "DevOps Service",
-    mainDescription:
+    mainText:
       " Take your DevOps projects to the next level with Cloud Nepalaya. We are dedicated to providing you with reliable DevOps solutions that can help you maximize your efficiency and productivity by making it easy to create, deploy, and manage custom software solutions with our full-service Dev ops service. By adopting DevOps methodologies and leveraging DevOps services, your organization can achieve greater agility, scalability, and efficiency in its software development and operations processes.",
-    subDescriptions: [
-      "With DevOps services, your organizations can benefit from faster release cycles, improved code quality, and greater agility in responding to changing business requirements and also reduce the risk of downtime and other issues, by ensuring that software is thoroughly tested and deployed in a consistent and reliable manner. At our company, we offer a range of DevOps services to help organizations achieve their software development goals, from planning and strategy to implementation and ongoing support. Our team of experts has the skills and experience needed to deliver customized DevOps solutions that meet the unique needs of each organization, ensuring that they can achieve their goals and stay ahead of the competition.",
-      "",
-    ],
+    text: "With DevOps services, your organizations can benefit from faster release cycles, improved code quality, and greater agility in responding to changing business requirements and also reduce the risk of downtime and other issues, by ensuring that software is thoroughly tested and deployed in a consistent and reliable manner. At our company, we offer a range of DevOps services to help organizations achieve their software development goals, from planning and strategy to implementation and ongoing support. Our team of experts has the skills and experience needed to deliver customized DevOps solutions that meet the unique needs of each organization, ensuring that they can achieve their goals and stay ahead of the competition.",
     faqs: [
       {
         question: "What are the benefits of DevOps?",
@@ -71,11 +68,10 @@ export const servicesData = [
       "Automation Testing",
     ],
     title: "QA Services",
-    mainDescription:
+    mainText:
       "Quality is key to any successful product. Cloud Nepalaya offers comprehensive QA testing services that can help you ensure quality assurance in all your projects. Let us help you reach peak performance in your products with the advanced QA solutions we offer. Get the highest quality assurance for your product with us. The goal is to ensure that your software products are of the highest quality and meet the needs of your customers. We use the latest technologies to provide timely and accurate solutions that meet your specific needs. By leveraging our QA services, our clients can improve the quality, reliability, and performance of their software products and ensure that they meet the needs of their customers.",
-    subDescriptions: [
-      " At our company, we offer a range of QA services to help organizations ensure that their applications meet the highest standards of quality. Our team of experts has the skills and experience needed to deliver customized QA solutions that meet the unique needs of each organization, ensuring that their applications are thoroughly tested and ready for deployment.",
-    ],
+    text: " At our company, we offer a range of QA services to help organizations ensure that their applications meet the highest standards of quality. Our team of experts has the skills and experience needed to deliver customized QA solutions that meet the unique needs of each organization, ensuring that their applications are thoroughly tested and ready for deployment.",
+
     faqs: [
       {
         question: "	What are the benefits of QA?",
@@ -104,11 +100,10 @@ export const servicesData = [
     image: Image3,
     id: 3,
     title: "Software Development",
-    mainDescription:
+    mainText:
       "We understand the importance of having software that works! Software development services are crucial for businesses that need to develop customized software solutions to meet their specific needs and requirements. Our software development solutions are designed to give you a competitive edge in today's market. From custom-built applications to website development, we have everything to help you make a lasting impression on your customers",
-    subDescriptions: [
-      "We offer a range of software development services to help organizations build custom software solutions that meet their specific needs. Our team of experts has the skills and experience needed to deliver high-quality software solutions, using the latest development methodologies and technologies. We begin by working closely with our clients to understand their requirements and identify the best approach for their software development project",
-    ],
+    text: "We offer a range of software development services to help organizations build custom software solutions that meet their specific needs. Our team of experts has the skills and experience needed to deliver high-quality software solutions, using the latest development methodologies and technologies. We begin by working closely with our clients to understand their requirements and identify the best approach for their software development project",
+
     features: [
       "Requirement",
       "Planning",
@@ -160,11 +155,9 @@ export const servicesData = [
       "	Social Media Marketing",
       "	SEO",
     ],
-    mainDescription:
+    mainText:
       "Grow your business faster with Cloud Nepalaya's digital marketing solutions. Our team of experienced professionals is here to help you create powerful campaigns that can help you reach new heights in online success. Search engine optimization (SEO), social media marketing, pay-per-click (PPC) advertising, email marketing, and content marketing are just a few of the digital marketing services we provide. We can provide you with the most recent digital marketing strategies and efficient content development methods to help you stand out from the crowd. Whether they are individuals or businesses, we make sure that our clients receive what they require. Let us be your guide through the ever-changing digital world. Tap into our expertise today and supercharge your business presence online with digital marketing!",
-    subDescriptions: [
-      "Our business provides a variety of digital marketing services to support companies in increasing their online exposure, attracting visitors to their websites, and turning leads into consumers. Our team of professionals has the knowledge and expertise necessary to create and implement specialized digital marketing plans that are tailored to the particular requirements of each organization.",
-    ],
+    text: "Our business provides a variety of digital marketing services to support companies in increasing their online exposure, attracting visitors to their websites, and turning leads into consumers. Our team of professionals has the knowledge and expertise necessary to create and implement specialized digital marketing plans that are tailored to the particular requirements of each organization.",
     faqs: [
       {
         question: "What are the benefits of digital marketing? ",
@@ -202,11 +195,9 @@ export const servicesData = [
       "Managed Cloud Hosting",
     ],
 
-    mainDescription:
+    mainText:
       "Our cloud hosting services offer a range of features, including automatic scaling, load balancing, and high availability, to ensure that businesses can easily manage their IT infrastructure and focus on their core operations. Cloud Nepalaya provides high-performance cloud hosting services at an affordable price. Our services are optimized for speed and reliability, so you can get your web projects off the ground quickly. Whether it's a small business or a large enterprise, our cloud hosting services can help businesses achieve their goals and stay competitive in today's rapidly evolving digital landscape.",
-    subDescriptions: [
-      "We offer a range of cloud hosting options, including shared hosting, dedicated hosting, and virtual private server (VPS) hosting, each of which is designed to meet the unique needs of different businesses. Our cloud hosting solutions are backed by industry-leading security and reliability features, ensuring that our client’s websites and applications are always available and secure.",
-    ],
+    text: "We offer a range of cloud hosting options, including shared hosting, dedicated hosting, and virtual private server (VPS) hosting, each of which is designed to meet the unique needs of different businesses. Our cloud hosting solutions are backed by industry-leading security and reliability features, ensuring that our client’s websites and applications are always available and secure.",
     faqs: [
       {
         question: "What is cloud hosting? ",
@@ -247,11 +238,9 @@ export const servicesData = [
     image: Image3,
     id: 6,
     title: "Cloud Support",
-    mainDescription:
+    mainText:
       "To help companies get the most out of their cloud investments, we provide a variety of support services, such as proactive monitoring, troubleshooting, and optimization. Our team of experts provides support and guidance to help businesses migrate their applications and data to the cloud and manage them effectively. With unlimited access and reliability, Cloud Nepalaya’s cloud service offers the confidence and security you need for your business operations. No more worrying about slow response times or server breakdowns, get 24/7 support, backed by our expertise and industry-leading technology. Your data is safe with us!",
-    subDescriptions: [
-      " In addition to our cloud hosting services, we also offer a range of cloud management and support services to help businesses manage their cloud environments and optimize their performance. Our team of cloud experts has the skills and experience needed to help businesses maximize the benefits of cloud hosting, delivering exceptional service and support every step of the way.",
-    ],
+    text: " In addition to our cloud hosting services, we also offer a range of cloud management and support services to help businesses manage their cloud environments and optimize their performance. Our team of cloud experts has the skills and experience needed to help businesses maximize the benefits of cloud hosting, delivering exceptional service and support every step of the way.",
     faqs: [
       {
         question: "What is cloud support? ",

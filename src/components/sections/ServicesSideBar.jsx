@@ -1,39 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import service from "../../assets/images/service3.jpg";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { BiTimeFive } from "react-icons/bi";
 import Image from "next/image";
 import { servicesData } from "@/data";
-const servicesLink = [
-  {
-    title: "DevOps Services",
-    url: "/service/1",
-  },
-  {
-    title: "Cloud Migration",
-    url: "/service/2",
-  },
-  {
-    title: "Software Development ",
-    url: "/service/3",
-  },
-  {
-    title: "Cloud Marketing",
-    url: "/service/4",
-  },
-  {
-    title: "Cloud Hosting",
-    url: "/service/5",
-  },
-  {
-    title: "Quality Analysis",
-    url: "/service/6",
-  },
-  {
-    title: "Cloud Support",
-    url: "/service/7",
-  },
-];
+import { getDocuments } from "@/apiCalls/general";
+// const servicesLink = [
+//   {
+//     title: "DevOps Services",
+//     url: "/service/1",
+//   },
+//   {
+//     title: "Cloud Migration",
+//     url: "/service/2",
+//   },
+//   {
+//     title: "Software Development ",
+//     url: "/service/3",
+//   },
+//   {
+//     title: "Cloud Marketing",
+//     url: "/service/4",
+//   },
+//   {
+//     title: "Cloud Hosting",
+//     url: "/service/5",
+//   },
+//   {
+//     title: "Quality Analysis",
+//     url: "/service/6",
+//   },
+//   {
+//     title: "Cloud Support",
+//     url: "/service/7",
+//   },
+// ];
 
 const workingHours = [
   "sun-thu 9:00-5:00 pm",
@@ -42,6 +43,17 @@ const workingHours = [
 ];
 
 const ServicesSideBar = () => {
+  const [documents, setDocuments] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getDocuments("service");
+      console.log(response?.data?.documents);
+      setDocuments(response?.data?.documents);
+      console.log(documents);
+      return response;
+    };
+    getData();
+  }, []);
   return (
     <div className="flex flex-col md:col-span-2 lg:col-span-1 gap-[1.5rem] pt-[2rem] md:pt-0 ">
       <div className="py-[1rem]  bg-gray-100 rounded-lg">
@@ -50,13 +62,13 @@ const ServicesSideBar = () => {
         </h1>
 
         <ul className=" flex flex-col items-start justify-center gap-[0.5rem]  py-[1rem] px-[1rem]">
-          {servicesData.map((item) => {
+          {documents.map((item) => {
             return (
               <li className="w-full py-[0.5rem] border-b border-b-gray-300  text-gray-500 last-of-type:border-none">
                 <a
                   className="grid grid-cols-4 justify-start  items-center  h-full w-full gap-[2rem] border-none"
-                  href={item.url}>
-                  <span className="col-span-3">{item.title}</span>{" "}
+                  href={`/service/${item?._id}`}>
+                  <span className="col-span-3">{item?.title}</span>{" "}
                   <BsArrowRight className="text-gray-800" />
                 </a>
               </li>

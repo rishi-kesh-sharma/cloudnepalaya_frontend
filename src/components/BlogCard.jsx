@@ -4,26 +4,26 @@ import { person1 } from "../assets/images/people/index";
 import { MdNoPhotography } from "react-icons/md";
 import { blogs } from "@/data";
 import Moment from "react-moment";
+const cheerio = require("cheerio");
 export default function BlogCard({ blog }) {
   blog = { ...blogs[0], ...blog };
   const imageProps = blog?.mainImage ? blog.mainImage : null;
   const AuthorimageProps = person1;
   return (
-    <Link href={`/blog/${blog?.id}`}>
+    <Link href={`/blog/${blog?._id}`}>
       <div
         className="bg-white gap-0 items-start hover:scale-105 cursor-pointer w-full
-lg:min-h-[310px]
+        min-h-[350px]
+lg:min-h-[350px]
  px-[1rem]
  py-[1rem]
  rounded-lg
- flex
- flex-col
- justify-center
+grid
  shadow-sm
  transition-all
  hover:shadow-md">
         <div className="w-[100%]  rounded-md">
-          <Link href={`/blog/${blog._id}`}>
+          <Link href={`/blog/${blog?._id}`}>
             {imageProps ? (
               <Image src={imageProps} />
             ) : (
@@ -43,18 +43,21 @@ lg:min-h-[310px]
           transition-[background-size]
           duration-500
           hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
-              {blog.title}
+              {blog?.title?.length < 70
+                ? blog?.title
+                : `${blog?.title.slice(0, 70)} ...`}
             </span>
           </Link>
         </h2>
+        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+          {blog?.text && cheerio.load(blog?.text).text()?.length < 70
+            ? blog?.text && cheerio.load(blog?.text).text()
+            : `${
+                blog?.text && cheerio.load(blog?.text).text().slice(0, 70)
+              } ...`}
+        </p>
 
-        <div className="hidden">
-          {blog.excerpt && (
-            <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
-              <Link href={`/blog/${blog._id}`}>{blog.excerpt}</Link>
-            </p>
-          )}
-        </div>
+        {}
 
         <div className="flex items-center w-full mt-3 space-x-3 text-gray-500 dark:text-gray-400 justify-between">
           <div className="flex items-center gap-3 justify-between">
@@ -66,7 +69,7 @@ lg:min-h-[310px]
                   loader={AuthorimageProps.loader}
                   objectFit="cover"
                   layout="fill"
-                  alt={blog?.author?.name}
+                  alt={blog?.author?.username}
                   placeholder="blur"
                   sizes="30px"
                   className="rounded-full object-contain"

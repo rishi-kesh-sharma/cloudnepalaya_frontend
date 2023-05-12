@@ -1,16 +1,14 @@
+"use client";
 import React from "react";
 import Container from "../commons/Container";
 import Hero from "../sections/Hero";
 import Section from "../commons/Section";
-import MountedContainer from "../commons/MountedContainer";
-
 import Creative from "../sections/Creative";
 import Pricing from "../sections/Pricing";
 import Services from "../sections/Services";
 import Growth from "../sections/Growth";
 import Features from "../sections/Features";
 import Testimonials from "../sections/Testimonials";
-import Footer from "../sections/Footer";
 const Home = () => {
   return (
     <>
@@ -39,6 +37,7 @@ const Home = () => {
       <Section className="bg-gray-50">
         <Container className="pt-[2rem] md:pt-[4rem] md:pb-[3rem] pb-[2rem]">
           <Services />
+          {/* <Services documents={services} /> */}
         </Container>
       </Section>
 

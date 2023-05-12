@@ -1,23 +1,40 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TestimonialsCard from "./TestimonialsCard";
 import CostumSlider from "./CustomSlider";
 
 import { TestimonialsData } from "@/data";
+import { getDocuments } from "@/apiCalls/general";
 
 const TestimonialsSlider = () => {
+  const [documents, setDocuments] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getDocuments("testimonial");
+      console.log(response?.data?.documents);
+      setDocuments(response?.data?.documents);
+      return response;
+    };
+    getData();
+  }, []);
   return (
     <div className="">
       {/* CUSTOM SLIDER */}
 
       <CostumSlider>
         {/* ALL TESTIMONIALS */}
-        {TestimonialsData.map((testimonial, index) => (
-          <div className="p-5 ">
-            {/* TESTIMONIAL CARD */}
-            <TestimonialsCard testimonial={testimonial} key={index} />
-          </div>
-        ))}
+        {documents.map((testimonial, index) => {
+          testimonial = {
+            image: TestimonialsData[0].image,
+            ...TestimonialsData[index],
+            ...testimonial,
+          };
+          return (
+            <div className="p-5 ">
+              <TestimonialsCard testimonial={testimonial} key={index} />
+            </div>
+          );
+        })}
       </CostumSlider>
     </div>
   );

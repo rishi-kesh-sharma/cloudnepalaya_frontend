@@ -1,10 +1,9 @@
-import BlogCard from "../BlogCard";
 import React from "react";
 import SectionSubtitle from "../commons/SectionSubtitle";
 import SectionDescription from "../commons/SectionDescription";
 import SectionTitle from "../commons/SectionTitle";
 import PaginatedItems from "../Paginations";
-const Blogs = ({ blogs }) => {
+const Blogs = () => {
   return (
     <div className="flex flex-col gap-[2rem] md:gap-[2rem] bg-gray-50 pb-[8rem]">
       <div>
@@ -20,8 +19,7 @@ const Blogs = ({ blogs }) => {
         </SectionDescription>
       </div>
       <div className="flex flex-col items-center justify-center">
-        {/* BLOGS PAGINATION */}
-        {<PaginatedItems itemsPerPage={3} items={blogs} />}
+        {<PaginatedItems itemsPerPage={3} />}
       </div>
     </div>
   );

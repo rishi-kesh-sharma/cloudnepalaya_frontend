@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./commons/Button";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { createDocument } from "@/apiCalls/general";
+import { createDocument, getDocuments } from "@/apiCalls/general";
 
 import Swal from "sweetalert2";
 
@@ -26,28 +26,40 @@ export const messageToast = (icon, title) => {
   });
 };
 
-const ContactForm = () => {
+const QuoteForm = () => {
+  const [documents, setDocuments] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getDocuments("service");
+      console.log(response?.data?.documents);
+      setDocuments(response?.data?.documents);
+      console.log(documents);
+      return response;
+    };
+    getData();
+  }, []);
   const handleSubmit = async (values) => {
     try {
-      const response = await createDocument("contact", values);
-      messageToast("success", "Message has Successfully been Sent!!!");
+      const response = await createDocument("quote", values);
+      messageToast("success", "Quote has been successfully requested!!!");
     } catch (err) {
       messageToast(
         "error",
-        `${err.response.message || err.message || "Message  cannot be Sent!!!"}`
+        `${err.response.message || err.message || "Cannot request quote!!!"}`
       );
     }
   };
   const initialValues = {
     name: "",
     email: "",
-    subject: "",
+    mobile: "",
+    service: "",
     message: "",
   };
   const validationSchema = Yup.object().shape({
     name: Yup.string().required(),
     email: Yup.string().email().required(),
-    subject: Yup.string().required(),
+    service: Yup.string().required(),
     message: Yup.string().required(),
   });
   return (
@@ -104,14 +116,21 @@ const ContactForm = () => {
         </div>
         <div className="relative">
           <Field
-            type="text"
-            id="subject"
-            name="subject"
-            className="block  rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-[2.5px] border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#404040] focus:outline-none focus:ring-0 focus:border-[#404040] peer "
-            placeholder=" "
-          />
+            as="select"
+            id="service"
+            name="service"
+            className="block cursor-pointer  rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-[2.5px] border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#404040] focus:outline-none focus:ring-0 focus:border-[#404040] peer "
+            placeholder=" ">
+            {documents?.map((item) => {
+              return (
+                <option value={item?._id} className="cursor-pointer">
+                  {item?.title}
+                </option>
+              );
+            })}
+          </Field>
           <ErrorMessage
-            name="subject"
+            name="service"
             className="text-[0.4rem] text-red-500 bg-red-300"
             style={{ background: "red" }}>
             {(msg) => (
@@ -119,9 +138,31 @@ const ContactForm = () => {
             )}
           </ErrorMessage>
           <label
-            for="subject"
+            for="service"
             className=" text-[1.3rem] absolute  text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-0 z-10 origin-[0] left-2.5 peer-focus:text-gray-900 peer-focus:dark:text-gray-900  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8">
-            Subject
+            service
+          </label>
+        </div>
+        <div className="relative">
+          <Field
+            type="number"
+            id="mobile"
+            name="mobile"
+            className="block  rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-[2.5px] border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#404040] focus:outline-none focus:ring-0 focus:border-[#404040] peer "
+            placeholder=" "
+          />
+          <ErrorMessage
+            name="mobile"
+            className="text-[0.4rem] text-red-500 bg-red-300"
+            style={{ background: "red" }}>
+            {(msg) => (
+              <div className="text-red-500 text-sm mt-[0.3rem] ">{msg}</div>
+            )}
+          </ErrorMessage>
+          <label
+            for="mobile"
+            className=" text-[1.3rem] absolute  text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-0 z-10 origin-[0] left-2.5 peer-focus:text-gray-900 peer-focus:dark:text-gray-900  peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8">
+            Mobile
           </label>
         </div>
         <div className="relative">
@@ -157,4 +198,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default QuoteForm;

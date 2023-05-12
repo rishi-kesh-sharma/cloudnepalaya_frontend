@@ -1,9 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mainServiceImage1 from "../../assets/images/service.jpg";
 import mainServiceImage2 from "../../assets/images/service2.jpg";
 import mainServiceImage3 from "../../assets/images/service3.jpg";
 import { AiFillCheckCircle } from "react-icons/ai";
+// import cheerio from "cheerio";
+const cheerio = require("cheerio");
 const serviceFeatures = [
   "We provide Flexible IT Services",
   "Best IT  Solution with Our Team",
@@ -13,30 +15,52 @@ const serviceFeatures = [
   "25 years Skilled Experience",
 ];
 import ServiceFAQ from "./ServiceFAQ";
-const Service = ({ service }) => {
-  const features = service?.features || serviceFeatures;
+import { getDocument } from "@/apiCalls/general";
+import { SERVER_STATIC_URL } from "@/constants/general";
+import { servicesData } from "@/data";
+const Service = ({ _id }) => {
+  const [document, setDocument] = useState({});
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getDocument("service", _id);
+      console.log(response?.data?.document);
+      setDocument(response?.data?.document);
+      console.log(document);
+      return response;
+    };
+    getData();
+  }, []);
+  // const features = document?.features || serviceFeatures;
 
+  console.log(typeof document?.text);
   return (
     <div className="md:col-span-3 lg:col-span-2   flex flex-col gap-[1rem] lg:gap-[2rem]  md:order-2">
       <div className="">
-        <Image className="rounded-lg lg:w-full" src={mainServiceImage1} />
+        <img
+          width={400}
+          height={300}
+          className="rounded-lg lg:w-full max-w-[500px] object-contain"
+          src={
+            document?.image?.filePath || document?.image?.fileName
+              ? `${SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
+              : servicesData[0].image
+          }
+        />
         <h1 className="font-semibold text-[1.6rem] mt-[1rem]">
           {" "}
-          {service?.title}
+          {document?.title}
         </h1>
-        <p className="text-sm text-gray-500">{service?.mainDescription}</p>
+        <p className="text-sm text-gray-500">{document?.mainText}</p>
       </div>
       <div className="rounded-lg bg-gray-100 grid lg:gap-[2rem] grid-cols-1 lg:grid-cols-2 lg:items-start">
-        <Image src={mainServiceImage2} className="rounded-lg lg:w-full" />
         <div>
           <h1 className="font-semibold text-[1.6rem] mt-[1rem]  px-[1rem] lg:mt-0">
             {" "}
             Service Features
           </h1>
-
           {/* SERVICE FEATURES */}
           <ul className=" px-[1rem] pb-[1rem]">
-            {features.map((item) => {
+            {document?.features?.map((item) => {
               return (
                 <li className="flex items-center gap-2 text-sm text-gray-500">
                   <AiFillCheckCircle className="text-gray-600 " />
@@ -50,25 +74,20 @@ const Service = ({ service }) => {
       <div className="">
         <h1 className="font-semibold text-[1.6rem] mt-[1rem]">
           {" "}
-          More About {service?.title}
+          More About {document?.title}
         </h1>
-        {service?.subDescriptions?.map((item) => {
-          {
-            return <p className="text-sm text-gray-500 pb-[1rem]">{item}</p>;
-          }
-        })}
+        <p className="text-sm text-gray-500 pb-[1rem]">{document?.mainText}</p>
 
-        <div className="grid  grid-cols-1 my-[1rem] md:mt-0 md:grid-cols-2 items-center justify-start gap-[1rem] object-contain w-full md:h-[200px] ">
-          <Image className="rounded-lg" src={mainServiceImage1} />
-          <Image
-            className="object-contain     rounded-lg"
-            src={mainServiceImage3}
-          />
-        </div>
+        <p className="text-sm text-gray-500 pb-[1rem]">
+          {" "}
+          {document?.text && cheerio.load(document?.text).text()}
+        </p>
 
-        {/* SERVICE FAQS SECTION */}
+        {/* SERVIC
+        E FAQS SECTION */}
         <div className="xl:pt-[2rem] 2xl:pt-[8rem]">
-          <ServiceFAQ faqs={service?.faqs} />
+          <h1 className="text-[1.4rem] font-semibold my-[1rem]">{`${document?.title} FAQs`}</h1>
+          <ServiceFAQ faqs={document?.FAQs} />
         </div>
       </div>
     </div>

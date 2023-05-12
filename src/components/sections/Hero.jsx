@@ -20,7 +20,7 @@ const Hero = () => {
         we have the expertise and infrastructure to meet your unique needs.
       </p>
       <div className="flex gap-[1rem] mt-6 flex-wrap">
-        <a href="/contact">
+        <a href="/quote">
           <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 px-6 py-3 md:py-4 md:px-9 rounded-md">
             Get Quote
           </Button>
