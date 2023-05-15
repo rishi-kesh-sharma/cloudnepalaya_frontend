@@ -18,26 +18,26 @@ const ServicesCards = () => {
   }, []);
   return (
     <div className="gap-[2rem] md:grid md:grid-cols-2 lg:col-span-2 grid grid-cols-1 justify-center lg:justify-start">
-      {documents?.map((item, index) => (
-        <a href={`/service/${item?._id}`}>
+      {documents?.map((document, index) => (
+        <a href={`/service/${document?._id}`}>
           <Card className="gap-[0.5rem] hover:shadow-md p-[1rem] hover:cursor-pointer hover:bg-gray-50 rounded-xl">
             <Image
               src={
-                document?.image?.filePath || document?.image?.fileName
+                document?.image?.filePath && document?.image?.fileName
                   ? `${SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
-                  : servicesData[0].image
+                  : servicesData[index].image.src
               }
               alt=""
-              height={80}
-              width={80}
+              height={130}
+              width={130}
             />
             <h3 className="text-[#467CFB] font-semibold text-lg">
-              {item?.title}
+              {document?.title}
             </h3>
             <p className=" text-gray-400 text-sm ">
-              {item?.mainText?.length > 250
-                ? `${item?.mainText?.slice(0, 250)} ...`
-                : item?.mainText}
+              {document?.mainText?.length > 250
+                ? `${document?.mainText?.slice(0, 250)} ...`
+                : document?.mainText}
             </p>
           </Card>
         </a>

@@ -31,8 +31,6 @@ const ContactCards = () => {
               src={item.image}
               alt=""
               className="h-[80px] max-w-[80px] md:h-full lg:h-[80px] object-contain  "
-              // height={150}
-              // width={150}
             />
           </div>
           <div className="w-full md:w-7/12  flex-col flex items-start justify-center">

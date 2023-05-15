@@ -3,7 +3,6 @@ import SectionSubtitle from "../commons/SectionSubtitle";
 import SectionDescription from "../commons/SectionDescription";
 import SectionTitle from "../commons/SectionTitle";
 import FeaturesCards from "../FeaturesCards";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { smallAnimation } from "@/constants/animations";
 

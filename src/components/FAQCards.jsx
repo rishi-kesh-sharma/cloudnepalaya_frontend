@@ -14,8 +14,11 @@ const FAQCards = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await getDocuments("faq");
-      console.log(response?.data?.documents);
-      setDocuments(response?.data?.documents);
+      console.log();
+      let generalFAQs = response?.data?.documents?.filter(
+        (item) => item.type == "General"
+      );
+      setDocuments(generalFAQs);
       return response;
     };
     getData();

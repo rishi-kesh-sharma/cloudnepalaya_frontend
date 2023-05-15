@@ -14,6 +14,15 @@ import Image2 from "./assets/images/hero-card2.png";
 import Image3 from "./assets/images/hero-card3.png";
 import Image4 from "./assets/images/hero-card4.png";
 
+import logoImage from "../../assets/images/logo.png";
+import {
+  BsFacebook,
+  BsGoogle,
+  BsInstagram,
+  BsLinkedin,
+  BsTwitter,
+} from "react-icons/bs";
+
 // SERVICES DATA
 export const servicesData = [
   {
@@ -533,3 +542,61 @@ export const TestimonialsData = [
       "It has been a great solution for our startup. The pricing is very affordable, and the platform is easy to use. The customer support team has been very responsive whenever we have had any issues.",
   },
 ];
+
+export const footer = {
+  logo: logoImage,
+  text: "As the trusted experts in our field, we understand that our customers rely on us to provide them with simple and effective solutions. That's why we keep things simple, by providing easy-to-use and straightforward services that are designed to meet your specific needs.",
+  socials: [
+    {
+      icon: <BsFacebook className="text-xl text-blue-500" />,
+      url: "facebook.com",
+    },
+    {
+      icon: <BsTwitter className="text-xl text-blue-500" />,
+      url: "twitter.com",
+    },
+    {
+      icon: <BsGoogle className="text-xl text-blue-500" />,
+      url: "twitter.com",
+    },
+    {
+      icon: <BsInstagram className="text-xl text-blue-500" />,
+      url: "instagram.com",
+    },
+    {
+      icon: <BsLinkedin className="text-xl text-blue-500" />,
+      url: "linkedin.com",
+    },
+  ],
+  columns: [
+    {
+      heading: "PRIVACY &amp; TOS",
+      links: [
+        { name: "Advertiser Agreement", url: "/" },
+        { name: "Acceptable Use Policy", url: "/" },
+        { name: "Privacy Policy", url: "/" },
+        { name: "Technology Privacy ", url: "/" },
+        { name: "Developer Agreement ", url: "/" },
+      ],
+    },
+    {
+      heading: "Navigate",
+      links: [
+        { name: "Advertisers", url: "/" },
+        { name: "Developers", url: "/" },
+        { name: "Resources", url: "/" },
+        { name: "Company", url: "/" },
+        { name: "Connect", url: "/" },
+      ],
+    },
+    {
+      heading: "Contact Us",
+      links: [
+        { name: "Mailing Addressxx00 E. Union Ave" },
+        { name: "Suite 1100. Denver, CO 80237" },
+        { name: "+999 90932 627" },
+        { name: "support@yourdomain.com" },
+      ],
+    },
+  ],
+};

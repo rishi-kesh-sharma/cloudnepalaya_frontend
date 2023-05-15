@@ -1,19 +1,9 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import mainServiceImage1 from "../../assets/images/service.jpg";
-import mainServiceImage2 from "../../assets/images/service2.jpg";
-import mainServiceImage3 from "../../assets/images/service3.jpg";
 import { AiFillCheckCircle } from "react-icons/ai";
 // import cheerio from "cheerio";
 const cheerio = require("cheerio");
-const serviceFeatures = [
-  "We provide Flexible IT Services",
-  "Best IT  Solution with Our Team",
-  "Award Winning Digital Solutions",
-  "25 years Skilled Experience",
-  "25 years Skilled Experience",
-  "25 years Skilled Experience",
-];
+
 import ServiceFAQ from "./ServiceFAQ";
 import { getDocument } from "@/apiCalls/general";
 import { SERVER_STATIC_URL } from "@/constants/general";
@@ -30,7 +20,6 @@ const Service = ({ _id }) => {
     };
     getData();
   }, []);
-  // const features = document?.features || serviceFeatures;
 
   console.log(typeof document?.text);
   return (
@@ -85,10 +74,12 @@ const Service = ({ _id }) => {
 
         {/* SERVIC
         E FAQS SECTION */}
-        <div className="xl:pt-[2rem] 2xl:pt-[8rem]">
-          <h1 className="text-[1.4rem] font-semibold my-[1rem]">{`${document?.title} FAQs`}</h1>
-          <ServiceFAQ faqs={document?.FAQs} />
-        </div>
+        {document?.FAQs?.length > 0 && (
+          <div className="xl:pt-[2rem] 2xl:pt-[8rem]">
+            <h1 className="text-[1.4rem] font-semibold my-[1rem]">{`${document?.title} FAQs`}</h1>
+            <ServiceFAQ faqs={document?.FAQs} />
+          </div>
+        )}
       </div>
     </div>
   );

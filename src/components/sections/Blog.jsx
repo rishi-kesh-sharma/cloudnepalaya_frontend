@@ -1,11 +1,8 @@
 "use client";
 
 const cheerio = require("cheerio");
-import { blogs, servicesData } from "@/data";
+import { servicesData } from "@/data";
 import person1 from "../../assets/images/people/person1.jpg";
-import mainImage from "../../assets/images/service.jpg";
-import mainImage2 from "../../assets/images/service2.jpg";
-import mainImage3 from "../../assets/images/service3.jpg";
 import Moment from "react-moment";
 import { getDocument } from "@/apiCalls/general";
 import { useEffect, useState } from "react";
@@ -16,9 +13,7 @@ const Blog = ({ _id }) => {
     const getData = async () => {
       const response = await getDocument("blog", _id);
 
-      console.log(response?.data?.document);
       setDocument(response?.data?.document);
-      console.log(document);
       return response;
     };
     getData();

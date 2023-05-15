@@ -5,36 +5,6 @@ import { BiTimeFive } from "react-icons/bi";
 import Image from "next/image";
 import { servicesData } from "@/data";
 import { getDocuments } from "@/apiCalls/general";
-// const servicesLink = [
-//   {
-//     title: "DevOps Services",
-//     url: "/service/1",
-//   },
-//   {
-//     title: "Cloud Migration",
-//     url: "/service/2",
-//   },
-//   {
-//     title: "Software Development ",
-//     url: "/service/3",
-//   },
-//   {
-//     title: "Cloud Marketing",
-//     url: "/service/4",
-//   },
-//   {
-//     title: "Cloud Hosting",
-//     url: "/service/5",
-//   },
-//   {
-//     title: "Quality Analysis",
-//     url: "/service/6",
-//   },
-//   {
-//     title: "Cloud Support",
-//     url: "/service/7",
-//   },
-// ];
 
 const workingHours = [
   "sun-thu 9:00-5:00 pm",

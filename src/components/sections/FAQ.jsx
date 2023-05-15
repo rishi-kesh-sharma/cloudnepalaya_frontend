@@ -3,7 +3,6 @@ import SectionSubtitle from "../commons/SectionSubtitle";
 import SectionDescription from "../commons/SectionDescription";
 import SectionTitle from "../commons/SectionTitle";
 import FAQCards from "../FAQCards.jsx";
-import Image from "next/image";
 
 const FAQ = () => {
   return (

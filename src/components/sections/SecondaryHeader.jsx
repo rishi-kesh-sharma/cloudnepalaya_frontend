@@ -1,9 +1,8 @@
 "use client";
-import React, { createContext, useContext } from "react";
+import React, { useContext } from "react";
 import ToggleButton from "../commons/ToggleButton";
 import { useState } from "react";
 import Button from "../commons/Button";
-import { bluish_gray_light, primary } from "../../constants/colors";
 import Container from "../commons/Container";
 import logoImage from "../../assets/images/logo.png";
 import Image from "next/image";
@@ -75,17 +74,6 @@ const SecondaryHeader = () => {
                   </a>
                 </li>
 
-                {/* <li>
-                  <a
-                    href="/pricing"
-                    className={` ${
-                      transparent
-                        ? "lg:text-gray-100 hover:text-white "
-                        : "text-gray-700 hover:text-blue-600"
-                    } text-gray-700 font-[500]   py-2 block pr-4  hover:scale-105 transition-all`}>
-                    Pricing
-                  </a>
-                </li> */}
                 <li>
                   <a
                     href="/blogs"

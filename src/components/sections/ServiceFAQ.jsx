@@ -6,7 +6,6 @@ import {
 } from "react-headless-accordion";
 
 const ServiceFAQ = ({ faqs }) => {
-  console.log(faqs);
   return (
     <Accordion
       className=" border border-gray-200 shadow-md rounded-lg"
