@@ -30,8 +30,8 @@ const FAQCards = () => {
         duration: "300ms",
         timingFunction: "cubic-bezier(0, 0, 0.2, 1)",
       }}>
-      {documents.map((item) => (
-        <AccordionItem>
+      {documents.map((item, index) => (
+        <AccordionItem key={index}>
           {({ open }) => (
             <>
               <AccordionHeader className="w-full flex justify-between items-start text-gray-600 border-b px-2 py-3  text-start ">

@@ -9,7 +9,7 @@ const TestimonialsCard = ({ testimonial }) => {
     <Card className="border flex flex-col justify-around border-gray-200 px-[1rem] py-[1rem] rounded-lg shadow-sm md:h-[300px] lg:h-[250px] xl:h-[300px]   2xl:h-[400px]">
       <div className="flex gap-[0.3rem]">
         {Array.from({ length: testimonial.ratings }, (_, i) => (
-          <BsStarFill className="text-yellow-500" />
+          <BsStarFill className="text-yellow-500" key={i} />
         ))}
       </div>
       <div className="flex flex-col justify-around">

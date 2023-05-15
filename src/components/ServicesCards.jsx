@@ -19,7 +19,7 @@ const ServicesCards = () => {
   return (
     <div className="gap-[2rem] md:grid md:grid-cols-2 lg:col-span-2 grid grid-cols-1 justify-center lg:justify-start">
       {documents?.map((document, index) => (
-        <a href={`/service/${document?._id}`}>
+        <a href={`/service/${document?._id}`} key={index}>
           <Card className="gap-[0.5rem] hover:shadow-md p-[1rem] hover:cursor-pointer hover:bg-gray-50 rounded-xl">
             <Image
               src={

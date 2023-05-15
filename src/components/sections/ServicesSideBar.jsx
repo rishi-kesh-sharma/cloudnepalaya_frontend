@@ -32,9 +32,11 @@ const ServicesSideBar = () => {
         </h1>
 
         <ul className=" flex flex-col items-start justify-center gap-[0.5rem]  py-[1rem] px-[1rem]">
-          {documents.map((item) => {
+          {documents.map((item, index) => {
             return (
-              <li className="w-full py-[0.5rem] border-b border-b-gray-300  text-gray-500 last-of-type:border-none">
+              <li
+                className="w-full py-[0.5rem] border-b border-b-gray-300  text-gray-500 last-of-type:border-none"
+                key={index}>
                 <a
                   className="grid grid-cols-4 justify-start  items-center  h-full w-full gap-[2rem] border-none"
                   href={`/service/${item?._id}`}>
@@ -51,9 +53,11 @@ const ServicesSideBar = () => {
           Working Hours
         </h1>
         <ul className="flex flex-col gap-[1rem] py-[1rem] ">
-          {workingHours.map((item) => {
+          {workingHours.map((item, index) => {
             return (
-              <li className="bg-white py-[1.5rem] px-[1rem] flex gap-[1rem] items-center justify-start text-gray-500">
+              <li
+                key={index}
+                className="bg-white py-[1.5rem] px-[1rem] flex gap-[1rem] items-center justify-start text-gray-500">
                 <BiTimeFive className="text-gray-600" />
                 <span> {item}</span>
               </li>

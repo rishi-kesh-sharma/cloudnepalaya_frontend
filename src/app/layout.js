@@ -31,29 +31,34 @@ export const NavCtx = createContext();
 export default function RootLayout({ children }) {
   // state to identify whether to keep bg transparent for header
   const [transparent, setTransparent] = useState(true);
-
+  // let window = {};
   // scroll event listener
-  addEventListener("scroll", (e) => {
-    if (Number(window.scrollY) > 50) {
-      setTransparent(false);
-    } else {
-      setTransparent(true);
-    }
-  });
+  useEffect(() => {
+    addEventListener("scroll", (e) => {
+      if (Number(typeof window !== "undefined" && window?.scrollY) > 50) {
+        setTransparent(false);
+      } else {
+        setTransparent(true);
+      }
+    });
+  }, []);
 
   return (
     <html lang="en">
-      <style jsx global>{`
-        html {
-          font-family: ${poppins.style.fontFamily};
-        }
-      `}</style>
+      <head>
+        <style jsx global>{`
+          html {
+            font-family: ${poppins.style.fontFamily};
+          }
+        `}</style>
 
-      {/* dynamic title */}
-      <title>
-        {window.location.pathname.split("/")[1].toUpperCase() || "Home"}
-      </title>
-      <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+        {/* dynamic title */}
+        <title>
+          {(typeof window !== "undefined" &&
+            window?.location?.pathname.split("/")[1].toUpperCase()) ||
+            "Home"}
+        </title>
+      </head>
       <body className={inter.className}>
         <NavCtx.Provider
           value={{
@@ -61,30 +66,37 @@ export default function RootLayout({ children }) {
           }}>
           <PageWrapper>
             {/* <Header /> */}
-            {location.pathname == "/" ? <Header /> : <SecondaryHeader />}
+            {typeof window !== "undefined" &&
+            window?.location?.pathname == "/" ? (
+              <Header />
+            ) : (
+              <SecondaryHeader />
+            )}
             {children}
             <Section className="bg-[#2681EB] relative">
-              {window.location.pathname != "/contact" && (
-                <Container className="absolute top-[-160px] sm:top-[-200px] left-[50%]  translate-x-[-50%]">
-                  <MountedContainer className="flex flex-col md:flex-row gap-[1rem] sm top-[50px] sm:top-[100px] md:justify-between lg:justify-around max-w-[1200px] mx-auto">
-                    <div className="">
-                      <h2 className="text-[#5ba5fb] font-[500] text-lg  lg:text-[1.5rem]">
-                        So What is Next
-                      </h2>
-                      <h1 className="text-[#13287e] text-xl lg:text-[1.8rem] font-[600] ">
-                        Are You Ready? Lets'S Work
-                      </h1>
-                    </div>
-                    <a href="/contact">
-                      <Button className="max-w-[170px] xl:max-w-[200px] uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-4 px-6  rounded-md">
-                        {window.location.pathname == "/services"
-                          ? " Request  Quote"
-                          : " Contact Us"}
-                      </Button>
-                    </a>
-                  </MountedContainer>
-                </Container>
-              )}
+              {typeof window !== "undefined" &&
+                window?.location?.pathname != "/contact" && (
+                  <Container className="absolute top-[-160px] sm:top-[-200px] left-[50%]  translate-x-[-50%]">
+                    <MountedContainer className="flex flex-col md:flex-row gap-[1rem] sm top-[50px] sm:top-[100px] md:justify-between lg:justify-around max-w-[1200px] mx-auto">
+                      <div className="">
+                        <h2 className="text-[#5ba5fb] font-[500] text-lg  lg:text-[1.5rem]">
+                          So What is Next
+                        </h2>
+                        <h1 className="text-[#13287e] text-xl lg:text-[1.8rem] font-[600] ">
+                          Are You Ready? Let&apos;S Work
+                        </h1>
+                      </div>
+                      <a href="/contact">
+                        <Button className="max-w-[170px] xl:max-w-[200px] uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-4 px-6  rounded-md">
+                          {typeof window !== "undefined" &&
+                          window?.location?.pathname == "/services"
+                            ? " Request  Quote"
+                            : " Contact Us"}
+                        </Button>
+                      </a>
+                    </MountedContainer>
+                  </Container>
+                )}
               <Container className=" pt-[8rem] xl:pt-[10rem] pb-[2rem] lg:pt-[6rem] lg:pb-[5rem] ">
                 <Footer />
               </Container>

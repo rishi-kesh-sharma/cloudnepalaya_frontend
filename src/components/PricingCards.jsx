@@ -13,6 +13,7 @@ const PricingCards = () => {
         alter = (index + 1) % 2 == 0;
         return (
           <Card
+            key={index}
             $as={motion.div}
             {...largeAnimation}
             className={`${
@@ -48,13 +49,14 @@ const PricingCards = () => {
               </p>
             </div> */}
             <ul className="flex flex-col gap-[0.6rem] items-center">
-              {item.features.map((feature) => (
-                <p
+              {item.features.map((feature, index) => (
+                <li
+                  key={index}
                   className={` text-sm ${
                     alter ? "text-gray-100" : "text-gray-400"
                   } `}>
                   {feature}
-                </p>
+                </li>
               ))}
             </ul>
             <a href="/quote">

@@ -31,9 +31,7 @@ const QuoteForm = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await getDocuments("service");
-      console.log(response?.data?.documents);
       setDocuments(response?.data?.documents);
-      console.log(documents);
       return response;
     };
     getData();
@@ -121,9 +119,12 @@ const QuoteForm = () => {
             name="service"
             className="block cursor-pointer  rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-[2.5px] border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#404040] focus:outline-none focus:ring-0 focus:border-[#404040] peer "
             placeholder=" ">
-            {documents?.map((item) => {
+            {documents?.map((item, index) => {
               return (
-                <option value={item?._id} className="cursor-pointer">
+                <option
+                  key={index}
+                  value={item?._id}
+                  className="cursor-pointer">
                   {item?.title}
                 </option>
               );

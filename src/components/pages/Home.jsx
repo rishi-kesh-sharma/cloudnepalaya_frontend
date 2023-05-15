@@ -4,11 +4,11 @@ import Container from "../commons/Container";
 import Hero from "../sections/Hero";
 import Section from "../commons/Section";
 import Creative from "../sections/Creative";
-import Pricing from "../../../Pricing";
 import Services from "../sections/Services";
 import Growth from "../sections/Growth";
 import Features from "../sections/Features";
 import Testimonials from "../sections/Testimonials";
+import Pricing from "./Pricing";
 const Home = () => {
   return (
     <>

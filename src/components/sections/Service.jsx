@@ -15,7 +15,6 @@ const Service = ({ _id }) => {
       const response = await getDocument("service", _id);
       console.log(response?.data?.document);
       setDocument(response?.data?.document);
-      console.log(document);
       return response;
     };
     getData();
@@ -49,9 +48,11 @@ const Service = ({ _id }) => {
           </h1>
           {/* SERVICE FEATURES */}
           <ul className=" px-[1rem] pb-[1rem]">
-            {document?.features?.map((item) => {
+            {document?.features?.map((item, index) => {
               return (
-                <li className="flex items-center gap-2 text-sm text-gray-500">
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-sm text-gray-500">
                   <AiFillCheckCircle className="text-gray-600 " />
                   {item}
                 </li>

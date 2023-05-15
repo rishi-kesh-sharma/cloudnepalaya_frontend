@@ -13,8 +13,8 @@ const ServiceFAQ = ({ faqs }) => {
         duration: "300ms",
         timingFunction: "cubic-bezier(0, 0, 0.2, 1)",
       }}>
-      {faqs?.map((item) => (
-        <AccordionItem>
+      {faqs?.map((item, index) => (
+        <AccordionItem key={index}>
           {({ open }) => (
             <div>
               <AccordionHeader

@@ -1,10 +1,11 @@
 import React from "react";
-import SectionSubtitle from "./src/components/commons/SectionSubtitle";
-import SectionDescription from "./src/components/commons/SectionDescription";
-import SectionTitle from "./src/components/commons/SectionTitle";
-import PricingCards from "./src/components/PricingCards";
+
 import { motion } from "framer-motion";
 import { smallAnimation } from "@/constants/animations";
+import SectionTitle from "../commons/SectionTitle";
+import SectionSubtitle from "../commons/SectionSubtitle";
+import SectionDescription from "../commons/SectionDescription";
+import PricingCards from "../PricingCards";
 
 const Pricing = () => {
   return (

@@ -12,7 +12,7 @@ import img5 from "../../assets/images/heroMountedContainerImages/img5.png";
 import img6 from "../../assets/images/heroMountedContainerImages/img6.png";
 import Image from "next/image";
 import Creative from "../sections/Creative";
-import Pricing from "../../../Pricing";
+import Pricing from "../sections/Pricing";
 import Services from "../sections/Services";
 import Growth from "../sections/Growth";
 import Features from "../sections/Features";

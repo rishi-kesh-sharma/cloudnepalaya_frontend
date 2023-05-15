@@ -11,8 +11,12 @@ const Banner = ({ title, breadCrumbs }) => {
       <Container className="flex items-center justify-center flex-col h-full gap-[2rem]">
         <h1 className="text-gray-100 text-[2rem] font-semibold">{title}</h1>
         <ul className="flex gap-[1rem]">
-          {breadCrumbs.map((breadCrumb) => {
-            return <li className="text-gray-50">{breadCrumb}</li>;
+          {breadCrumbs.map((breadCrumb, index) => {
+            return (
+              <li key={index} className="text-gray-50">
+                {breadCrumb}
+              </li>
+            );
           })}
         </ul>
       </Container>

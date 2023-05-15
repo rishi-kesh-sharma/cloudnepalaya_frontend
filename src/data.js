@@ -1,4 +1,4 @@
-import BlogImage from "./assets/images/service.jpg";
+import BlogImage from "./assets/images/service2.jpg";
 import BlogImage2 from "./assets/images/service2.jpg";
 import BlogImage3 from "./assets/images/service3.jpg";
 import { person1 as AuthorImage } from "./assets/images/people/index";
@@ -14,7 +14,7 @@ import Image2 from "./assets/images/hero-card2.png";
 import Image3 from "./assets/images/hero-card3.png";
 import Image4 from "./assets/images/hero-card4.png";
 
-import logoImage from "../../assets/images/logo.png";
+import logoImage from "./assets/images/logo.png";
 import {
   BsFacebook,
   BsGoogle,

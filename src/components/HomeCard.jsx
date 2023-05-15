@@ -27,8 +27,8 @@ const cardData = [
 const HomeCards = () => {
   return (
     <div className="flex gap-[1rem]  md:gap-[2rem]  flex-wrap mt-[2rem] max-w-[900px]">
-      {cardData.map((item) => (
-        <Card className="gap-[0.5rem] max-w-[400px]">
+      {cardData.map((item, index) => (
+        <Card key={index} className="gap-[0.5rem] max-w-[400px]">
           <Image src={item.image} alt="" height={80} width={80} />
           <h3 className="text-[#467CFB] font-[500] ">{item.title}</h3>
           <p className="text-[1rem] text-gray-400 text-sm ">

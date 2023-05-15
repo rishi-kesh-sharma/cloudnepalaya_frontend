@@ -24,10 +24,11 @@ const Testimonials = () => {
         </SectionSubtitle>
         <SectionDescription
           $as={motion.p}
+          cls
           {...smallAnimation}
           className="text-center text-sm ">
-          We're thrilled to see that our efforts have not gone unnoticed. We are
-          proud to have received numerous glowing testimonials from our
+          We are thrilled to see that our efforts have not gone unnoticed. We
+          are proud to have received numerous glowing testimonials from our
           satisfied clients.
         </SectionDescription>
       </div>

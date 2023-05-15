@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { person1 } from "../assets/images/people/index";
-import { MdNoPhotography } from "react-icons/md";
 import { blogs } from "@/data";
 import Moment from "react-moment";
 import { SERVER_STATIC_URL } from "@/constants/general";
@@ -9,7 +8,7 @@ const cheerio = require("cheerio");
 export default function BlogCard({ blog }) {
   blog = { ...blogs[0], ...blog };
   const imageProps = blog?.mainImage ? blog.mainImage : null;
-  const AuthorimageProps = person1;
+  const AuthorImageProps = person1;
   return (
     <Link href={`/blog/${blog?._id}`}>
       <div
@@ -35,6 +34,7 @@ grid-rows-2
               }
               height={80}
               width={80}
+              alt="image"
             />
           </Link>
         </div>
@@ -68,11 +68,11 @@ grid-rows-2
           <div className="flex items-center w-full mt-3 space-x-3 text-gray-500 dark:text-gray-400 justify-between">
             <div className="flex items-center gap-3 justify-between">
               <div className="relative flex-shrink-0 w-5 h-5">
-                {AuthorimageProps && (
+                {AuthorImageProps && (
                   <Image
-                    src={AuthorimageProps.src}
-                    blurDataURL={AuthorimageProps.blurDataURL}
-                    loader={AuthorimageProps.loader}
+                    src={AuthorImageProps.src}
+                    blurDataURL={AuthorImageProps.blurDataURL}
+                    loader={AuthorImageProps.loader}
                     objectFit="cover"
                     layout="fill"
                     alt={blog?.author?.username}

@@ -3,7 +3,6 @@ import React, { createContext, useContext } from "react";
 import ToggleButton from "../commons/ToggleButton";
 import { useState } from "react";
 import Button from "../commons/Button";
-import { bluish_gray_light, primary } from "../../constants/colors";
 import Container from "../commons/Container";
 import logoImage from "../../assets/images/logo.png";
 import Image from "next/image";

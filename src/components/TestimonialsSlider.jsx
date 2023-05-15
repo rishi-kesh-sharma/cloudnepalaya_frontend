@@ -30,7 +30,7 @@ const TestimonialsSlider = () => {
             ...testimonial,
           };
           return (
-            <div className="p-5 ">
+            <div key={index} className="p-5 ">
               <TestimonialsCard testimonial={testimonial} key={index} />
             </div>
           );

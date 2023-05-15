@@ -24,8 +24,10 @@ const cardData = [
 const QuoteCards = () => {
   return (
     <div className="gap-[2rem] flex flex-col justify-center lg:col-span-2">
-      {cardData.map((item) => (
-        <Card className="flex-col md:flex-row gap-[1rem] rounded-md shadow-md bg-blue-50 border border-blue-300 px-[1rem] py-[1rem] md:px-[2rem] md:py-[2rem]">
+      {cardData.map((item, index) => (
+        <Card
+          key={index}
+          className="flex-col md:flex-row gap-[1rem] rounded-md shadow-md bg-blue-50 border border-blue-300 px-[1rem] py-[1rem] md:px-[2rem] md:py-[2rem]">
           <div className="flex justify-start md:items-center md:justify-center lg:justify-start lg:h-full">
             <Image
               src={item.image}

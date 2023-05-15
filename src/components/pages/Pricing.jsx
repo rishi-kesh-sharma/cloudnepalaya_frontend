@@ -10,7 +10,7 @@ import img3 from "../../assets/images/heroMountedContainerImages/img3.png";
 import img4 from "../../assets/images/heroMountedContainerImages/img4.png";
 import img5 from "../../assets/images/heroMountedContainerImages/img5.png";
 import img6 from "../../assets/images/heroMountedContainerImages/img6.png";
-import PricingSection from "../../../Pricing";
+import PricingSection from "../sections/Pricing";
 import Growth from "../sections/Growth";
 import Testimonials from "../sections/Testimonials";
 import Banner from "../commons/Banner";

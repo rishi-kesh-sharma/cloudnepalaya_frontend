@@ -19,8 +19,8 @@ const Creative = () => {
     <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-7 items-center md:w-full relative lg:pt-[3rem]">
       <Container className="absolute top-[-160px] sm:top-[-200px] left-[50%]  translate-x-[-50%]">
         <MountedContainer className="grid grid-cols-3 gap-[1rem]  xl:grid-cols-6">
-          {images.map((image) => (
-            <Image src={image} />
+          {images.map((image, index) => (
+            <Image key={index} src={image} alt="image" />
           ))}
         </MountedContainer>
       </Container>
@@ -45,8 +45,8 @@ const Creative = () => {
         </motion.h1>
         <motion.p {...smallAnimation} className="text-gray-300 text-sm ">
           As the trusted experts in our field, we understand that our customers
-          rely on us to provide them with simple and effective solutions. That's
-          why we keep things simple, by providing easy-to-use and
+          rely on us to provide them with simple and effective solutions.
+          That&apos;s why we keep things simple, by providing easy-to-use and
           straightforward services that are designed to meet your specific
           needs.
         </motion.p>
