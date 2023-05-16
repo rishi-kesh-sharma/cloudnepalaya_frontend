@@ -4,11 +4,11 @@ import { footer } from "@/data";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="grid grid-cols-1 text-gray-200 gap-[1rem] md:grid-cols-2 lg:grid-cols-4  lg:justify-center text-sm md:text-lg">
+    <div className=" relative grid grid-cols-1 text-gray-200 gap-[1rem] md:grid-cols-2 lg:grid-cols-4  lg:justify-center lg:justify-items-center text-sm md:text-lg">
       <div className="flex flex-col gap-[1rem]">
         <Image src={footer.logo} />
         <p className="text-sm">{footer.text}</p>
-        <ul className="flex gap-[0.5rem]  text-lg">
+        <ul className="flex   text-lg">
           {footer.socials.map((social, index) => (
             <li key={index} className="p-[0.4rem] bg-white">
               <a className="" href={social.url}>
@@ -36,6 +36,9 @@ const Footer = () => {
           </div>
         );
       })}
+      <div className=" text-sm mt-[1rem]">
+        Copyright © 2019 All Rights Reserved by App Technologies
+      </div>
     </div>
   );
 };
