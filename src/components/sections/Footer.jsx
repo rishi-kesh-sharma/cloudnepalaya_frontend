@@ -36,6 +36,9 @@ const Footer = () => {
           </div>
         );
       })}
+      <div className=" text-sm mt-[1rem]">
+        Copyright © 2019 All Rights Reserved by App Technologies
+      </div>
     </div>
   );
 };
