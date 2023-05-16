@@ -1,9 +1,6 @@
 import React from "react";
 import Container from "../commons/Container";
-import Hero from "../sections/Hero";
 import Section from "../commons/Section";
-import MountedContainer from "../commons/MountedContainer";
-
 import img1 from "../../assets/images/heroMountedContainerImages/img1.png";
 import img2 from "../../assets/images/heroMountedContainerImages/img2.png";
 import img3 from "../../assets/images/heroMountedContainerImages/img3.png";

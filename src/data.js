@@ -570,7 +570,9 @@ export const footer = {
   ],
   columns: [
     {
+
       heading: "PRIVACY ",
+
       links: [
         { name: "Advertiser Agreement", url: "/" },
         { name: "Acceptable Use Policy", url: "/" },
