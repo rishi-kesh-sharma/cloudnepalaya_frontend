@@ -582,17 +582,17 @@ export const footer = {
     {
       heading: "Navigate",
       links: [
-        { name: "home", url: "/" },
-        { name: "about", url: "/about" },
-        { name: "blogs", url: "/blogs" },
-        { name: "faq", url: "/faq" },
-        { name: "contact", url: "/contact" },
+        { name: "Home", url: "/" },
+        { name: "About", url: "/about" },
+        { name: "Blogs", url: "/blogs" },
+        { name: "Faqs", url: "/faqs" },
+        { name: "Services", url: "/services" },
+        { name: "Contact", url: "/contact" },
       ],
     },
     {
       heading: "Contact Us",
       links: [
-        { name: "Lagankhel , Lalitpur" },
         { name: "Lagankhel ,Lalitpur" },
         { name: "9813179590" },
         { name: "cloudnepalaya@gmail.com" },

@@ -6,7 +6,6 @@ import person1 from "../../assets/images/people/person1.jpg";
 import Moment from "react-moment";
 import { getDocument } from "@/apiCalls/general";
 import { useEffect, useState } from "react";
-import { SERVER_STATIC_URL } from "@/constants/general";
 const Blog = ({ _id }) => {
   const [document, setDocument] = useState({});
   useEffect(() => {
@@ -72,7 +71,7 @@ const Blog = ({ _id }) => {
                 className="rounded-lg lg:w-full max-w-[500px] object-contain"
                 src={
                   document?.image?.filePath || document?.image?.fileName
-                    ? `${SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
+                    ? `${process.env.SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
                     : servicesData[0].image
                 }
               />

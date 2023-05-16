@@ -8,7 +8,6 @@ import logoImage from "../../assets/images/logo.png";
 import Image from "next/image";
 import Section from "../commons/Section";
 import { NavCtx } from "@/app/layout";
-import { DASHBOARD_URL } from "../../constants/general";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,13 +61,6 @@ const Header = () => {
                   </a>
                 </li>
 
-                {/* <li>
-                  <a
-                    href="/pricing"
-                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
-                    Pricing
-                  </a>
-                </li> */}
                 <li>
                   <a
                     href="/blogs"
@@ -91,7 +83,9 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="lg:ml-[2rem]">
-                  <a href={`${DASHBOARD_URL}/login`} className="  md:p-0">
+                  <a
+                    href={`${process.env.DASHBOARD_URL}/login`}
+                    className="  md:p-0">
                     <Button
                       className={`bg-[#5BA5FB] text-gray-100 py-[4px] px-7 rounded-md border border-white hover:scale-105 hover:bg-sky-800 transition-all`}>
                       Login!

@@ -4,8 +4,8 @@ import { footer } from "@/data";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="grid grid-cols-1 text-gray-200 gap-[1rem] md:grid-cols-2 lg:grid-cols-4  lg:justify-center text-sm md:text-lg">
-      <div className="flex flex-col gap-[1rem]">
+    <div className="grid grid-cols-1 text-gray-200 gap-[1rem] md:grid-cols-2 lg:grid-cols-5  lg:justify-center lg:justify-items-center text-sm md:text-lg">
+      <div className="flex flex-col gap-[1rem] col-span-2">
         <Image src={footer.logo} />
         <p className="text-sm">{footer.text}</p>
         <ul className="flex gap-[0.5rem]  text-lg">
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         );
       })}
-      <div className=" text-sm mt-[1rem]">
+      <div className=" text-sm mt-[1rem] col-span-3  items-start justify-self-start">
         Copyright © 2019 All Rights Reserved by App Technologies
       </div>
     </div>

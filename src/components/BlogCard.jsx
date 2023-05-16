@@ -3,7 +3,6 @@ import Link from "next/link";
 import { person1 } from "../assets/images/people/index";
 import { blogs } from "@/data";
 import Moment from "react-moment";
-import { SERVER_STATIC_URL } from "@/constants/general";
 const cheerio = require("cheerio");
 export default function BlogCard({ blog }) {
   blog = { ...blogs[0], ...blog };
@@ -29,7 +28,7 @@ grid-rows-2
               className="w-full object-contain"
               src={
                 blog?.image?.filePath && blog?.image?.fileName
-                  ? `${SERVER_STATIC_URL}${blog?.image?.filePath}/${blog?.image?.fileName}`
+                  ? `${process.env.SERVER_STATIC_URL}${blog?.image?.filePath}/${blog?.image?.fileName}`
                   : imageProps.src
               }
               height={80}
