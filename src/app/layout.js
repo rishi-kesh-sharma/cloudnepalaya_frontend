@@ -26,11 +26,16 @@ export const NavCtx = createContext();
 export default function RootLayout({ children }) {
   // state to identify whether to keep bg transparent for header
   const [transparent, setTransparent] = useState(true);
-  // let window = {};
   // scroll event listener
   useEffect(() => {
     addEventListener("scroll", (e) => {
-      if (Number(typeof window !== "undefined" && window?.scrollY) > 50) {
+      if (
+        Number(
+          typeof window !== "undefined" &&
+            typeof window !== undefined &&
+            window?.scrollY
+        ) > 50
+      ) {
         setTransparent(false);
       } else {
         setTransparent(true);
@@ -50,6 +55,7 @@ export default function RootLayout({ children }) {
         {/* dynamic title */}
         <title>
           {(typeof window !== "undefined" &&
+            typeof window !== undefined &&
             window?.location?.pathname.split("/")[1].toUpperCase()) ||
             "Home"}
         </title>
@@ -62,6 +68,7 @@ export default function RootLayout({ children }) {
           <PageWrapper>
             {/* <Header /> */}
             {typeof window !== "undefined" &&
+            typeof window !== undefined &&
             window?.location?.pathname == "/" ? (
               <Header />
             ) : (
@@ -70,6 +77,7 @@ export default function RootLayout({ children }) {
             {children}
             <Section className="bg-[#2681EB] relative">
               {typeof window !== "undefined" &&
+                typeof window !== undefined &&
                 window?.location?.pathname != "/contact" && (
                   <Container className="absolute top-[-160px] sm:top-[-200px] left-[50%]  translate-x-[-50%]">
                     <MountedContainer className="flex flex-col md:flex-row gap-[1rem] sm top-[50px] sm:top-[100px] md:justify-between lg:justify-around max-w-[1200px] mx-auto">
@@ -84,6 +92,7 @@ export default function RootLayout({ children }) {
                       <a href="/contact">
                         <Button className="max-w-[170px] xl:max-w-[200px] uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-4 px-6  rounded-md">
                           {typeof window !== "undefined" &&
+                          typeof window !== undefined &&
                           window?.location?.pathname == "/services"
                             ? " Request  Quote"
                             : " Contact Us"}
