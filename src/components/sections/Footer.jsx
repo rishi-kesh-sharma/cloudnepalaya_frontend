@@ -36,11 +36,10 @@ const Footer = () => {
           </div>
         );
       })}
-      <div className=" text-sm mt-[1rem]">
+
+      <div className=" text-sm mt-[1rem] col-span-3  items-start justify-self-start">
         Copyright © 2019 All Rights Reserved by App Technologies
       </div>
     </div>
   );
 };
-
-export default Footer;
