@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex flex-col gap-[1rem] col-span-2">
         <Image src={footer.logo} />
         <p className="text-sm">{footer.text}</p>
-        <ul className="flex gap-[0.5rem]  text-lg">
+        <ul className="flex   text-lg">
           {footer.socials.map((social, index) => (
             <li key={index} className="p-[0.4rem] bg-white">
               <a className="" href={social.url}>
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         );
       })}
-      <div className=" text-sm mt-[1rem] col-span-3  items-start justify-self-start">
+      <div className=" text-sm mt-[1rem]">
         Copyright © 2019 All Rights Reserved by App Technologies
       </div>
     </div>

@@ -5,6 +5,7 @@ const nextConfig = {
     SERVER_STATIC_URL: "https://api.cloudnepalaya.com",
     DASHBOARD_URL: "http://admin.cloudnepalaya.com/login",
   },
+
   images: {
     domains: ["http://api.cloudnepalaya.com", "https://api.cloudnepalaya.com"],
   },
