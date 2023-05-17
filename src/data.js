@@ -570,7 +570,9 @@ export const footer = {
   ],
   columns: [
     {
-      heading: "PRIVACY & TOS",
+
+      heading: "PRIVACY ",
+
       links: [
         { name: "Advertiser Agreement", url: "/" },
         { name: "Acceptable Use Policy", url: "/" },
@@ -582,20 +584,20 @@ export const footer = {
     {
       heading: "Navigate",
       links: [
-        { name: "Advertisers", url: "/" },
-        { name: "Developers", url: "/" },
-        { name: "Resources", url: "/" },
-        { name: "Company", url: "/" },
-        { name: "Connect", url: "/" },
+        { name: "Home", url: "/" },
+        { name: "About", url: "/about" },
+        { name: "Blogs", url: "/blogs" },
+        { name: "Faqs", url: "/faqs" },
+        { name: "Services", url: "/services" },
+        { name: "Contact", url: "/contact" },
       ],
     },
     {
       heading: "Contact Us",
       links: [
-        { name: "Mailing Addressxx00 E. Union Ave" },
-        { name: "Suite 1100. Denver, CO 80237" },
-        { name: "+999 90932 627" },
-        { name: "support@yourdomain.com" },
+        { name: "Lagankhel ,Lalitpur" },
+        { name: "9813179590" },
+        { name: "cloudnepalaya@gmail.com" },
       ],
     },
   ],

@@ -6,7 +6,6 @@ const cheerio = require("cheerio");
 
 import ServiceFAQ from "./ServiceFAQ";
 import { getDocument } from "@/apiCalls/general";
-import { SERVER_STATIC_URL } from "@/constants/general";
 import { servicesData } from "@/data";
 const Service = ({ _id }) => {
   const [document, setDocument] = useState({});
@@ -30,7 +29,7 @@ const Service = ({ _id }) => {
           className="rounded-lg lg:w-full max-w-[500px] object-contain"
           src={
             document?.image?.filePath || document?.image?.fileName
-              ? `${SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
+              ? `${process.env.SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
               : servicesData[0].image
           }
         />

@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
+  env: {
+    SERVER_BASE_URL: "https://api.cloudnepalaya.com/api",
+    SERVER_STATIC_URL: "https://api.cloudnepalaya.com",
+    DASHBOARD_URL: "http://admin.cloudnepalaya.com/login",
+  },
+
   images: {
-    domains: ["localhost"],
+    domains: ["http://api.cloudnepalaya.com", "https://api.cloudnepalaya.com"],
   },
   experimental: {
     appDir: true,

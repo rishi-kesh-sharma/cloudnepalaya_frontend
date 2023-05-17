@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./commons/Card";
 import { BsStar, BsStarFill } from "react-icons/bs";
-import { SERVER_STATIC_URL } from "@/constants/general";
 import { person1 } from "@/assets/images/people";
 
 const TestimonialsCard = ({ testimonial }) => {
@@ -18,7 +17,7 @@ const TestimonialsCard = ({ testimonial }) => {
       <div className=" flex justify-around lg:justify-start items-center  gap-[2rem]">
         <img
           src={
-            `${SERVER_STATIC_URL}${testimonial?.image?.filePath}/${testimonial?.image?.fileName}` ||
+            `${process.env.SERVER_STATIC_URL}${testimonial?.image?.filePath}/${testimonial?.image?.fileName}` ||
             servicesData[index].image ||
             person1.src
           }

@@ -8,7 +8,6 @@ import logoImage from "../../assets/images/logo.png";
 import Image from "next/image";
 import Section from "../commons/Section";
 import { NavCtx } from "@/app/layout";
-import { DASHBOARD_URL } from "../../constants/general";
 
 const SecondaryHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -109,7 +108,9 @@ const SecondaryHeader = () => {
                   </a>
                 </li>
                 <li className="lg:ml-[2rem]">
-                  <a href={`${DASHBOARD_URL}/login`} className="  md:p-0">
+                  <a
+                    href={`${process.env.DASHBOARD_URL}/login`}
+                    className="  md:p-0">
                     <Button
                       className={`bg-[#5BA5FB] text-gray-100 py-[4px] px-7 rounded-md border border-white hover:scale-105 hover:bg-sky-800 transition-all hover:`}>
                       Login!

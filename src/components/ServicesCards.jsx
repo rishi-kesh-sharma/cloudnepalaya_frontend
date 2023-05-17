@@ -4,7 +4,6 @@ import Card from "./commons/Card";
 import Image from "next/image";
 import { servicesData } from "@/data";
 import { getDocuments } from "@/apiCalls/general";
-import { SERVER_BASE_URL, SERVER_STATIC_URL } from "@/constants/general";
 const ServicesCards = () => {
   const [documents, setDocuments] = useState([]);
   useEffect(() => {
@@ -24,7 +23,7 @@ const ServicesCards = () => {
             <Image
               src={
                 document?.image?.filePath && document?.image?.fileName
-                  ? `${SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
+                  ? `${process.env.SERVER_STATIC_URL}${document?.image?.filePath}/${document?.image?.fileName}`
                   : servicesData[index].image.src
               }
               alt=""
