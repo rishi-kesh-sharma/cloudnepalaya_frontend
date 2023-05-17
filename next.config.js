@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: "build",
-
   env: {
     SERVER_BASE_URL: "https://api.cloudnepalaya.com/api",
     SERVER_STATIC_URL: "https://api.cloudnepalaya.com",

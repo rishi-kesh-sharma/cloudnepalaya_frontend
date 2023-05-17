@@ -25,6 +25,7 @@ const poppins = Poppins({
   style: ["normal", "italic"],
   subsets: ["latin"],
 });
+f;
 
 export const NavCtx = createContext();
 
